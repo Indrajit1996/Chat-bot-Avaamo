@@ -88,9 +88,29 @@ function clickSearch() {
       if(content) {
         $('.chat__wrapper').prepend('<div class="chat__message"><div>' + content + '</div></div>');
       } 
+      if(attachments) {
+        let { card_carousel: {cards} } = attachments;
+        
+        $('.chat__wrapper').prepend('<div class="chat__message"><div class="carousel-wrapper"><div class="carousel">' 
+        +
+          cards.map((card, index) => (
+            `
+            <div class=${index === 0 ? "item  active" : "item"}>
+              <h4>${card.title}</h4>
+              <img class="carousel__photo" src=${card.showcase_image_url} alt="card3" width="360" height="345">
+              <p style="font-size: 16px">${card.description}</p>
+              <div class="carousel-caption" style="border-top: 1px solid black; border-bottom: 1px solid black">
+                <p style="color: blue"><a href=${card.links[0].url}>${card.links[0].title}</a></p>
+              </div>
+            </div>
+            `
+          )) 
+        +
+        '</div></div></div>');
+      }
     };
     setTimeout(() => {
-      $(".content").stop().animate({ scrollTop: $(".content")[0].scrollHeight}, +2000);
+      $(".content").stop().animate({ scrollTop: $(".content")[0].scrollHeight}, +4000);
     }, 100);
   }
 }
