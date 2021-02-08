@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700,800,900&display=swap" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="project.css" >
+  </head>
+  <body style="height:82%; width:50%">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="myScript.js"> 
+    </script>
+    <div id="card-body">
+      <div id="header" class="header"  style="position:absolute; top:0px; left:0px; right:0px;overflow:hidden; background: #227ACB"> 
+        <h4>Sanity Check - Message Types 
+          <span class="close_button" onclick="closeForm()">X</span>
+        </h4>
+      </div> 
+      <div id="content" class="content"> 
+        <div class="chat">
+          <div class="chat__wrapper" id="chat_wrapper">
+            
+          </div>
+        </div>
+      </div> 
+      <div id="footer" class="footer"> 
+        <div class="example">
+          <input type="text" class="submit_on_enter" id="search-box" placeholder="Type a Message" name="search">
+          <span class="button" type="submit" onclick="clickSearch()">Send</span>
+        </div>
+      </div>
+      <div>
+        <a class="boxclose" id="boxclose" onclick="closeForm()"></a>
+      </div>
+    </div>
+    <button class="open-button" id="open-button" onclick="openForm()">Open ChatBot</button>
+  </body>
+</html>
